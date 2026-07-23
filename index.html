@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omar Samir — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="prto.css" />
+</head>
+<body>
+
+  <!-- ======================== LOADING SCREEN ======================== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-name">OMAR SAMIR</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-tagline">Loading your experience...</div>
+    </div>
+  </div>
+
+  <!-- ======================== CURSOR ======================== -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ======================== PARTICLES ======================== -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ======================== SELECTION SCREEN (HOME) ======================== -->
+  <section id="selection-screen">
+    <div class="selection-bg-glow"></div>
+    <div class="selection-content">
+      <div class="selection-badge" data-aos="fade-down">Portfolio 2025</div>
+      <h1 class="selection-name" data-aos="fade-up" data-aos-delay="100">Omar Samir</h1>
+      <p class="selection-sub" data-aos="fade-up" data-aos-delay="200">Building experiences in tech &amp; food.</p>
+
+      <div class="mode-cards" data-aos="fade-up" data-aos-delay="350">
+
+        <!-- Developer Card -->
+        <div class="mode-card dev-card" id="enter-dev" data-tilt>
+          <div class="card-glow"></div>
+          <div class="card-icon-wrap">
+            <div class="card-orb dev-orb"></div>
+            <i class="fa-solid fa-laptop-code card-icon"></i>
+          </div>
+          <div class="card-label">Learning Developer</div>
+          <div class="card-desc">Code · Tech · Growth</div>
+          <div class="card-cta">
+            <span>Enter</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="card-grid-lines"></div>
+        </div>
+
+        <!-- Chef Card -->
+        <div class="mode-card chef-card" id="enter-chef" data-tilt>
+          <div class="card-glow chef-glow"></div>
+          <div class="card-icon-wrap">
+            <div class="card-orb chef-orb"></div>
+            <i class="fa-solid fa-utensils card-icon"></i>
+          </div>
+          <div class="card-label">Chef Mode</div>
+          <div class="card-desc">Food · Creativity · Life</div>
+          <div class="card-cta">
+            <span>Enter</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="card-steam"></div>
+        </div>
+
+      </div>
+
+      <p class="selection-hint" data-aos="fade-up" data-aos-delay="500">Choose your world</p>
+    </div>
+
+    <!-- Floating decorative elements -->
+    <div class="float-el fe-1"></div>
+    <div class="float-el fe-2"></div>
+    <div class="float-el fe-3"></div>
+    <div class="float-el fe-4"></div>
+  </section>
+
+  <!-- ======================== CINEMATIC TRANSITION OVERLAY ======================== -->
+  <div id="transition-overlay">
+    <div class="trans-ripple"></div>
+    <div class="trans-text"></div>
+  </div>
+
+  <!-- ======================== DEVELOPER MODE ======================== -->
+  <div id="dev-mode">
+
+    <!-- NAV -->
+    <nav class="site-nav dev-nav" id="dev-nav">
+      <div class="nav-logo" id="dev-nav-logo">
+        <span class="logo-bracket">&lt;</span>OS<span class="logo-bracket">/&gt;</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#dev-about" class="nav-link">About</a></li>
+        <li><a href="#dev-skills" class="nav-link">Skills</a></li>
+        <li><a href="#dev-projects" class="nav-link">Projects</a></li>
+        <li><a href="#dev-certs" class="nav-link">Certs</a></li>
+        <li><a href="#dev-contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="mode-switch-btn" id="switch-to-chef">
+        <i class="fa-solid fa-utensils"></i> Chef Mode
+      </button>
+      <button class="hamburger" id="dev-hamburger"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="dev-hero">
+      <div class="dev-hero-grid"></div>
+      <div class="dev-hero-content">
+        <div class="hero-badge">[ Student Developer ]</div>
+        <h1 class="dev-hero-name">
+          <span class="name-line">Omar</span>
+          <span class="name-line">Samir</span>
+        </h1>
+        <p class="dev-hero-tagline">
+          <span class="typewriter" id="dev-typewriter"></span><span class="cursor-blink">|</span>
+        </p>
+        <div class="dev-hero-btns">
+          <a href="#dev-projects" class="btn-primary-dev">View Projects <i class="fa-solid fa-arrow-down"></i></a>
+          <a href="#dev-contact" class="btn-ghost-dev">Contact Me</a>
+        </div>
+        <div class="hero-scroll-indicator">
+          <div class="scroll-line"></div>
+          <span>Scroll</span>
+        </div>
+      </div>
+      <div class="dev-hero-visual">
+        <div class="profile-orb-wrap">
+          <div class="profile-orb-ring r1"></div>
+          <div class="profile-orb-ring r2"></div>
+          <div class="profile-orb-ring r3"></div>
+          <div class="profile-avatar-circle">
+            <img src="fo/WhatsApp Image 2026-05-08 at 3.32.21 PM.jpeg" alt="Omar Samir" class="profile-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-fallback"><i class="fa-solid fa-user"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="dev-section" id="dev-about">
+      <div class="section-container">
+        <div class="section-label">01 — About</div>
+        <h2 class="section-title dev-title" data-aos="fade-up">Who Am I?</h2>
+        <div class="about-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-text-block">
+            <p class="about-text">I'm <strong>Omar Samir</strong> — a passionate student developer navigating the exciting world of technology. I'm on a journey of continuous learning, building real projects, and growing one commit at a time.</p>
+            <p class="about-text">I believe in hands-on learning — building things, breaking them, and rebuilding them better. My goal is to become a well-rounded developer with both technical depth and creative vision.</p>
+            <div class="about-stats">
+              <div class="stat-card">
+                <span class="stat-num">6+</span>
+                <span class="stat-label">Skills in Progress</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Curiosity Level</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Dedication</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-card-visual" data-aos="fade-left" data-aos-delay="200">
+            <div class="terminal-card">
+              <div class="terminal-header">
+                <span class="t-dot red"></span>
+                <span class="t-dot yellow"></span>
+                <span class="t-dot green"></span>
+                <span class="t-title">omar@portfolio:~</span>
+              </div>
+              <div class="terminal-body">
+                <div class="t-line"><span class="t-prompt">$</span> whoami</div>
+                <div class="t-line t-output">Omar Samir — Student Developer</div>
+                <div class="t-line"><span class="t-prompt">$</span> cat status.txt</div>
+                <div class="t-line t-output">Currently: Learning &amp; Building</div>
+                <div class="t-line"><span class="t-prompt">$</span> echo $PASSION</div>
+                <div class="t-line t-output">Tech + Creativity</div>
+                <div class="t-line"><span class="t-prompt">$</span> ls skills/</div>
+                <div class="t-line t-output">html/ css/ js/ sql/ networking/ git/</div>
+                <div class="t-line blink-line"><span class="t-prompt">$</span> <span class="cursor-blink">█</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="dev-section alt-section" id="dev-skills">
+      <div class="section-container">
+        <div class="section-label">02 — Skills</div>
+        <h2 class="section-title dev-title" data-aos="fade-up">My Arsenal</h2>
+        <p class="section-sub dev-sub" data-aos="fade-up" data-aos-delay="50">I am currently a student developer, continuously learning and improving through practice and real projects.</p>
+        <div class="skills-grid">
+
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-icon-wrap"><i class="fa-brands fa-html5 skill-icon html-icon"></i></div>
+            <div class="skill-info">
+              <span class="skill-name">HTML5</span>
+              <span class="skill-badge learning">Learning</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 55%"></div></div>
+          </div>
+
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="skill-icon-wrap"><i class="fa-brands fa-css3-alt skill-icon css-icon"></i></div>
+            <div class="skill-info">
+              <span class="skill-name">CSS3</span>
+              <span class="skill-badge training">In Training</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 50%"></div></div>
+          </div>
+
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-icon-wrap"><i class="fa-brands fa-js skill-icon js-icon"></i></div>
+            <div class="skill-info">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-badge beginner">Beginner Level</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 35%"></div></div>
+          </div>
+
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="skill-icon-wrap"><i class="fa-solid fa-database skill-icon sql-icon"></i></div>
+            <div class="skill-info">
+              <span class="skill-name">SQL</span>
+              <span class="skill-badge improving">Improving</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 40%"></div></div>
+          </div>
+
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired skill-icon net-icon"></i></div>
+            <div class="skill-info">
+              <span class="skill-name">Networking</span>
+              <span class="skill-badge training">In Training</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 45%"></div></div>
+          </div>
+
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="350">
+            <div class="skill-icon-wrap"><i class="fa-brands fa-git-alt skill-icon git-icon"></i></div>
+            <div class="skill-info">
+              <span class="skill-name">Git &amp; GitHub</span>
+              <span class="skill-badge learning">Learning</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 50%"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="dev-section" id="dev-projects">
+      <div class="section-container">
+        <div class="section-label">03 — Projects</div>
+        <h2 class="section-title dev-title" data-aos="fade-up">What I've Built</h2>
+        <div class="projects-grid">
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-img-wrap">
+              <img src="traks/Annotation 2026-05-08 155510.png" alt="Guide Egypt" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="project-img-fallback"><i class="fa-solid fa-globe"></i></div>
+              <div class="project-overlay">
+                <span class="project-tag">Tourism Platform</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Guide Egypt</h3>
+              <p class="project-desc">A tourism platform concept designed to help travelers explore Egypt's hidden gems and cultural landmarks through a modern digital experience.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-btn demo-btn"><i class="fa-solid fa-play"></i> Live Demo</a>
+                <a href="https://github.com/your-username/guide-egypt" class="proj-btn github-btn" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-img-wrap">
+              <img src="traks/مشروع رقم 21.png" alt="Project 2" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="project-img-fallback"><i class="fa-solid fa-code"></i></div>
+              <div class="project-overlay">
+                <span class="project-tag">Web App</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">BMW Car Showroom Database</h3>
+              <p class="project-desc">I created a database management system for a BMW car showroom, where I practiced designing tables, building relationships, creating forms, queries, and reports to organize and manage data efficiently.
+
+This project gave me hands-on experience and motivated me to keep learning, improving my database skills, and building more real-world projects.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-btn demo-btn"><i class="fa-solid fa-play"></i> Live Demo</a>
+                <a href="https://github.com/your-username/project" class="proj-btn github-btn" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-img-wrap">
+              <img src="traks/مشروع 3.png" alt="Project 3" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="project-img-fallback"><i class="fa-solid fa-layer-group"></i></div>
+              <div class="project-overlay">
+                <span class="project-tag"></span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">project sho</h3>
+              <p class="project-desc">Designed a modern products page for a donut shop website, displaying donut varieties with prices, quantity controls, and an Add to Cart feature. The interface emphasizes simplicity, usability, and an enjoyable shopping experience.</p>
+              <div class="project-tags">
+                <span>JS</span><span>SQL</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-btn demo-btn"><i class="fa-solid fa-play"></i> Live Demo</a>
+                <a href="https://github.com/your-username/project" class="proj-btn github-btn" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="dev-section alt-section" id="dev-certs">
+      <div class="section-container">
+        <div class="section-label">04 — Certifications</div>
+        <h2 class="section-title dev-title" data-aos="fade-up">Credentials</h2>
+        <div class="certs-grid">
+
+          <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="cert-img-wrap">
+              <img src="traks/شبكات .png" alt="Certificate 1" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="cert-img-fallback"><i class="fa-solid fa-certificate"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">ccna</div>
+              <h3 class="cert-title">Recognition Certificate for Successfully Completing the CCNA Training Program</h3>
+              <div class="cert-date"><i class="fa-regular fa-calendar"></i> Month Year</div>
+            </div>
+          </div>
+
+          <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="cert-img-wrap">
+              <img src="traks/شهاده 4.png" alt="Certificate 2" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="cert-img-fallback"><i class="fa-solid fa-award"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">Google AI Essentials</div>
+              <h3 class="cert-title">Completed Google AI Essentials, developing a strong foundation in Artificial Intelligence, Generative AI, prompt engineering, and the practical use of AI tools in real-world applications.</h3>
+              <div class="cert-date"><i class="fa-regular fa-calendar"></i> Month Year</div>
+            </div>
+          </div>
+
+          <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="cert-img-wrap">
+              <img src="traks/شهادع 2.png" alt="Certificate 3" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="cert-img-fallback"><i class="fa-solid fa-medal"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer"> U.S. Embassy in collaboration with ITI</div>
+              <h3 class="cert-title">I recently had the chance to attend an inspiring meeting organized by the U.S. Embassy in collaboration with ITI, held at the Knowledge Hub in the New Administrative Capital.
+ The discussion focused on women’s rights and highlighted several important social issues that affect our communities.
+What I truly valued about this meeting was the exchange of ideas and perspectives, and how different voices came together to support empowerment and equality. It was not only informative but also a reminder of the importance of dialogue in shaping a better future.
+I am grateful for the opportunity to be part of such meaningful discussions, and I look forward to more experiences like this tha</h3>
+              <div class="cert-date"><i class="fa-regular fa-calendar"></i> Month Year</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="dev-section" id="dev-contact">
+      <div class="section-container">
+        <div class="section-label">05 — Contact</div>
+        <h2 class="section-title dev-title" data-aos="fade-up">Let's Connect</h2>
+        <div class="contact-layout" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-info">
+            <p class="contact-text">Whether you want to collaborate, give feedback, or just say hi — I'm always open to connecting.</p>
+            <div class="contact-items">
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:oa471279@gmail.com">your@email.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/omar-samir-391b93366?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">linkedin.com/in/your-profile</a>
+              </div>
+              <div class="contact-item">
+                <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/oa471279-star" target="_blank">github.com/your-username</a>
+              </div>
+            </div>
+          </div>
+         <a href="https://wa.me/201016254698" target="_blank" class="whatsapp-btn">
+  <i class="fa-brands fa-whatsapp"></i>
+  send to whatsapp
+</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="dev-footer">
+      <div class="footer-inner">
+        <div class="footer-logo"><span class="logo-bracket">&lt;</span>OS<span class="logo-bracket">/&gt;</span></div>
+        <p class="footer-copy">© 2025 Omar Samir. Built with passion & curiosity.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/your-username" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://twitter.com/your-handle" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com/your-handle" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <a href="#dev-about" class="back-top dev-back"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+  <!-- end dev-mode -->
+
+
+  <!-- ======================== CHEF MODE ======================== -->
+  <div id="chef-mode">
+
+    <!-- NAV -->
+    <nav class="site-nav chef-nav" id="chef-nav">
+      <div class="nav-logo chef-logo">
+        <i class="fa-solid fa-leaf"></i> Omar Samir
+      </div>
+      <ul class="nav-links">
+        <li><a href="#chef-story" class="nav-link">Story</a></li>
+        <li><a href="#chef-dishes" class="nav-link">Dishes</a></li>
+        <li><a href="#chef-meals" class="nav-link">Meals</a></li>
+        <li><a href="#chef-gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#chef-facts" class="nav-link">Facts</a></li>
+      </ul>
+      <button class="mode-switch-btn chef-switch-btn" id="switch-to-dev">
+        <i class="fa-solid fa-laptop-code"></i> Dev Mode
+      </button>
+      <button class="hamburger chef-hamburger" id="chef-hamburger"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- CHEF HERO -->
+    <section class="chef-hero">
+      <div class="chef-hero-bg">
+        <div class="hero-warm-gradient"></div>
+        <div class="hero-texture"></div>
+      </div>
+      <div class="chef-hero-content">
+        <div class="chef-hero-badge">✦ Chef Mode ✦</div>
+        <h1 class="chef-hero-name">
+          Omar Samir
+        </h1>
+        <p class="chef-hero-sub">Where every dish tells a story<br>and every recipe is a new adventure.</p>
+        <a href="#chef-story" class="btn-chef">Discover My World <i class="fa-solid fa-arrow-down"></i></a>
+      </div>
+      <div class="chef-hero-visual">
+        <div class="chef-avatar-wrap">
+          <div class="chef-avatar-ring"></div>
+          <div class="chef-avatar-circle">
+            <img src="fo/chef.jpeg" alt="Omar Samir Chef" class="profile-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-fallback chef-fallback"><i class="fa-solid fa-user-chef"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating food icons -->
+      <div class="food-float ff1"><i class="fa-solid fa-pepper-hot"></i></div>
+      <div class="food-float ff2"><i class="fa-solid fa-seedling"></i></div>
+      <div class="food-float ff3"><i class="fa-solid fa-lemon"></i></div>
+      <div class="food-float ff4"><i class="fa-solid fa-apple-whole"></i></div>
+      <div class="food-float ff5"><i class="fa-solid fa-mug-hot"></i></div>
+    </section>
+
+    <!-- MY STORY -->
+    <section class="chef-section" id="chef-story">
+      <div class="section-container">
+        <div class="section-label chef-label">01 — My Story</div>
+        <h2 class="section-title chef-title" data-aos="fade-up">The Kitchen Chronicles</h2>
+        <div class="story-layout" data-aos="fade-up" data-aos-delay="100">
+          <div class="story-text">
+            <p class="chef-text">"Cooking has always been my first language. Long before I learned to write code, I learned to read flavors — to understand how ingredients talk to each other, how heat transforms the ordinary into the extraordinary."</p>
+            <p class="chef-text">My passion for food isn't just about following recipes. It's about experimentation, creativity, and the joy of sharing. Every dish I make carries a little piece of my story — my culture, my curiosity, and my relentless desire to create something beautiful.</p>
+            <p class="chef-text">And interestingly, the kitchen taught me the same lessons that coding would later reinforce: precision matters, creativity matters more, and the best results come from fearless iteration.</p>
+          </div>
+          <div class="story-quote-card" data-aos="fade-left" data-aos-delay="200">
+            <div class="quote-mark">"</div>
+            <blockquote>Cooking feels like coding. You write the recipe, debug the flavors, and serve something that makes people smile.</blockquote>
+            <cite>— Omar Samir</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAVORITE DISHES -->
+    <section class="chef-section alt-chef" id="chef-dishes">
+      <div class="section-container">
+        <div class="section-label chef-label">02 — Favorite Dishes</div>
+        <h2 class="section-title chef-title" data-aos="fade-up">What I Love to Make</h2>
+        <div class="dishes-grid">
+
+          <div class="dish-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="dish-img-wrap">
+              <img src="food/WhatsApp Image 2026-07-10 at 4.32.43 AM.jpeg" alt="Dish 1" class="dish-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="dish-img-fallback"><i class="fa-solid fa-bowl-food"></i></div>
+            </div>
+            <div class="dish-info">
+              <h3 class="dish-name">pasta Homemade</h3>
+              <p class="dish-desc">A comforting classic with a personal twist. Replace this with a short description of your favorite dish.</p>
+              <div class="dish-tags"><span>Homemade</span><span>Classic</span></div>
+            </div>
+          </div>
+
+          <div class="dish-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="dish-img-wrap">
+              <img src="food/WhatsApp Image 2026-07-10 at 4.28.00 AM (2).jpeg" alt="Dish 2" class="dish-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="dish-img-fallback"><i class="fa-solid fa-pizza-slice"></i></div>
+            </div>
+            <div class="dish-info">
+              <h3 class="dish-name">pizza slice</h3>
+              <p class="dish-desc">Bold flavors, perfect balance. Add your favorite dish description here and why it's special to you.</p>
+              <div class="dish-tags"><span>Signature</span><span>Spicy</span></div>
+            </div>
+          </div>
+
+          <div class="dish-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="dish-img-wrap">
+              <img src="food/WhatsApp Image 2026-07-10 at 4.28.00 AM (1).jpeg" alt="Dish 3" class="dish-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="dish-img-fallback"><i class="fa-solid fa-drumstick-bite"></i></div>
+            </div>
+            <div class="dish-info">
+              <h3 class="dish-name">pasta</h3>
+              <p class="dish-desc">Made with love and a dash of adventure. Describe your dish, its origins, or the story behind it.</p>
+              <div class="dish-tags"><span>Traditional</span><span>Comfort</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE MEALS -->
+    <section class="chef-section" id="chef-meals">
+      <div class="section-container">
+        <div class="section-label chef-label">03 — Signature Meals</div>
+        <h2 class="section-title chef-title" data-aos="fade-up">My Signature Creations</h2>
+        <div class="meals-list">
+
+          <div class="meal-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="meal-number">01</div>
+            <div class="meal-content">
+              <h3 class="meal-title">Signature Meal Name</h3>
+              <p class="meal-desc">A signature creation with deep personal meaning. Replace this with your real signature dish and what makes it special. Describe the flavors, technique, and feeling it evokes.</p>
+            </div>
+            <div class="meal-icon"><i class="fa-solid fa-star"></i></div>
+          </div>
+
+          <div class="meal-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="meal-number">02</div>
+            <div class="meal-content">
+              <h3 class="meal-title">Signature Meal Name</h3>
+              <p class="meal-desc">Another dish that tells your culinary story. What makes this a signature for you? Talk about the process, the taste, and what inspired it.</p>
+            </div>
+            <div class="meal-icon"><i class="fa-solid fa-fire"></i></div>
+          </div>
+
+          <div class="meal-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="meal-number">03</div>
+            <div class="meal-content">
+              <h3 class="meal-title">Signature Meal Name</h3>
+              <p class="meal-desc">The dish you always come back to. Share what makes this one timeless for you — a family recipe, a creative experiment, or a cultural tradition.</p>
+            </div>
+            <div class="meal-icon"><i class="fa-solid fa-heart"></i></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOD GALLERY -->
+    <section class="chef-section alt-chef" id="chef-gallery">
+      <div class="section-container">
+        <div class="section-label chef-label">04 — Gallery</div>
+        <h2 class="section-title chef-title" data-aos="fade-up">Food Gallery</h2>
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="gallery-item gi-large">
+            <img src="fo/5f3c5fd45fd62f522196d3c4bf0fb49e.jpg" alt="Food 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="gallery-fallback"><i class="fa-solid fa-bowl-food"></i></div>
+            <div class="gallery-hover"><span>View</span></div>
+          </div>
+          <div class="gallery-item">
+            <img src="fo/9bebfdf8e3c0e0133e0613c3df423345.jpg" alt="Food 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="gallery-fallback"><i class="fa-solid fa-egg"></i></div>
+            <div class="gallery-hover"><span>View</span></div>
+          </div>
+          <div class="gallery-item">
+            <img src="fo/dd994ddc0cd822b83f7b12dc83cfb8e9.jpg" alt="Food 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="gallery-fallback"><i class="fa-solid fa-pizza-slice"></i></div>
+            <div class="gallery-hover"><span>View</span></div>
+          </div>
+          <div class="gallery-item">
+            <img src="fo/2.jpeg" alt="Food 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="gallery-fallback"><i class="fa-solid fa-cookie"></i></div>
+            <div class="gallery-hover"><span>View</span></div>
+          </div>
+          <div class="gallery-item gi-wide">
+            <img src="fo/1.jpeg" alt="Food 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="gallery-fallback"><i class="fa-solid fa-mug-hot"></i></div>
+            <div class="gallery-hover"><span>View</span></div>
+          </div>
+          <div class="gallery-item">
+            <img src="fo/33.jpeg" alt="Food 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="gallery-fallback"><i class="fa-solid fa-apple-whole"></i></div>
+            <div class="gallery-hover"><span>View</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FUN FACTS -->
+    <section class="chef-section" id="chef-facts">
+      <div class="section-container">
+        <div class="section-label chef-label">05 — Fun Facts</div>
+        <h2 class="section-title chef-title" data-aos="fade-up">Little Things About Me</h2>
+        <div class="facts-grid">
+
+          <div class="fact-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="fact-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <p class="fact-text">"Cooking feels like coding — you write the recipe, debug the flavors, and serve something that makes people smile."</p>
+          </div>
+
+          <div class="fact-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="fact-icon"><i class="fa-solid fa-mug-hot"></i></div>
+            <p class="fact-text">"Coffee is part of every creative session — whether I'm writing code or experimenting in the kitchen."</p>
+          </div>
+
+          <div class="fact-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="fact-icon"><i class="fa-solid fa-flask"></i></div>
+            <p class="fact-text">"I enjoy experimenting with new recipes — treating every new ingredient as a variable to play with."</p>
+          </div>
+
+          <div class="fact-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="fact-icon"><i class="fa-solid fa-fire"></i></div>
+            <p class="fact-text">"The best meals, like the best projects, come from taking risks and not being afraid to fail and try again."</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CHEF FOOTER -->
+    <footer class="chef-footer">
+      <div class="footer-inner">
+        <div class="footer-logo chef-logo-foot"><i class="fa-solid fa-leaf"></i> Omar Samir</div>
+        <p class="footer-copy">© 2025 Omar Samir. Life is better with good food &amp; good code.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/omvrr_samirr?igsh=bzNyM28ycHV5cWVv" target="_blank"><i class="fa-brands fa-instagram"></i></a>     
+          <a href="https://www.tiktok.com/@omvrr_samirr?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <a href="#chef-story" class="back-top chef-back"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+  <!-- end chef-mode -->
+
+
+  <!-- ======================== MOBILE MENU OVERLAY ======================== -->
+  <div id="mobile-menu" class="hidden">
+    <button id="mobile-close"><i class="fa-solid fa-xmark"></i></button>
+    <ul id="mobile-links"></ul>
+  </div>
+
+
+  <!-- AOS (optional scroll animations, loads async) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+  <!-- Main JS -->
+  <script src="prto.js" defer></script>
+</body>
+</html>
